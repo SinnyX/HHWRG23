@@ -10,24 +10,24 @@ void AO_delay() {
 
 void L() {
   moveRobot(-100, 80);
-  delay(100);
-  while (ADD_0.read(4) > ref[4]) {
+  delay(80);
+  while (ADD_0.read(3) > ref[3]) {
     moveRobot(-30, 20);
   }
   moveRobot(100, -100);
-  delay(40);
+  delay(10);
   AO();
   delay(1);
 }
 
 void R() {
   moveRobot(80, -100);
-  delay(100);
-  while (ADD_0.read(3) > ref[3]) {
+  delay(80);
+  while (ADD_0.read(4) > ref[4]) {
     moveRobot(20, -30);
   }
   moveRobot(-100, 100);
-  delay(30);
+  delay(10);
   AO();
   delay(1);
 }
@@ -39,7 +39,7 @@ void U() {
     moveRobot(20, -30);
   }
   moveRobot(-100, 100);
-  delay(30);
+  delay(10);
   AO();
   delay(1);
 }
