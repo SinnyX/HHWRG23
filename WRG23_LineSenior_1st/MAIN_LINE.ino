@@ -1,9 +1,18 @@
+// int pj = 0;
 void LineMainPart() {
-  if (ADD_0.read(0) < ref[0] && ADD_0.read(7) < ref[7]) {
+  // if (ADD_0.read(0) < ref[0] && ADD_0.read(7) < ref[7]) {
+  if (ADD_0.read(1) < ref[1] && ADD_0.read(6) < ref[6]) {
+    delay(20);
     conditionGreen();
-    lastReset = millis();
-    while (millis() - lastReset < 50) {
-      pid(ms, p, d);
+    // AO();
+    // beep();
+    // delay(200);)
+
+    if (stateTurn == 2 || stateTurn == 1) {
+      lastReset = millis();
+      while (millis() - lastReset < 10) {
+        fd(50);
+      }
     }
 
     if (stateTurn == 0) {
@@ -11,15 +20,20 @@ void LineMainPart() {
     } else if (stateTurn == 1) {
       R();
     } else if (stateTurn == 3) {
+      lastReset = millis();
+      while (millis() - lastReset < 20) {
+        fd(50);
+      }
       U();
+      // waitSW_OK_bmp();
+      // delay(500);
     }
-
     // AO();
     // oled.clear();
     // numberToStringStateTurn();
     // oled.show();
     // if (stateTurn == 0) {
-    //   sound(C_5, 300);
+    // sound(C_5, 300);
     // } else if (stateTurn == 1) {
     //   sound(G_5, 300);
     // } else if (stateTurn == 3) {
@@ -28,10 +42,14 @@ void LineMainPart() {
     // beep();
     // delay(500);
 
-    // waitSW_OK_bmp();
-    // delay(500);
+    // pj++;
+    // if (pj > 1) {
+    //   AO();
+    //   waitSW_OK_bmp();
+    //   pj = 0;
+    //   delay(500);
+    // }
   } else {
-    // conditionGreen();
     pid(ms, p, d);
   }
 }

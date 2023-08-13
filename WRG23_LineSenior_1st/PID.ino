@@ -27,7 +27,7 @@ long readline() {
     }
   } else {
     ////////////////////////////////////////////////////
-    if (last_position > 1000 && last_position < 6000) {
+    if (last_position > 3000 && last_position < 4000) {
       if (checkOutLineForTimer == 0) {
         lastReset = millis();
         checkOutLineForTimer++;
@@ -64,15 +64,15 @@ void pid(int ms, float p, float d) {
   if (leftMotorSpeed > 50) {
     leftMotorSpeed = 50;
   }
-  if (leftMotorSpeed < 30) {
-    leftMotorSpeed = -35;
-  }
+  // if (leftMotorSpeed < 30) {
+  //   leftMotorSpeed = -35;
+  // }
   if (rightMotorSpeed > 50) {
     rightMotorSpeed = 50;
   }
-  if (rightMotorSpeed < 30) {
-    rightMotorSpeed = -35;
-  }
+  // if (rightMotorSpeed < 30) {
+  //   rightMotorSpeed = -35;
+  // }
 
   motor(1, leftMotorSpeed);
   motor(2, rightMotorSpeed);
