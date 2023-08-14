@@ -37,17 +37,19 @@ void setup() {
   }
 
   oled.mode(1);
-sound(E_5, 100);
+  sound(E_5, 200);
   delay(100);
-  sound(E_5, 100);
+  sound(E_5, 200);
   delay(100);
-  sound(E_5, 100);
+  sound(E_5, 200);
+  delay(300);
+  sound(C_5, 200);
   delay(100);
-  sound(C_5, 100);
+  sound(E_5, 200);
   delay(100);
-  sound(D_5, 100);
+  sound(G_5, 300);
   delay(100);
-  sound(E_5, 300);
+  sound(G_4, 200);
   while (!sw_OK()) {
     if (SW_A() == 1) {
       oled.clear();
